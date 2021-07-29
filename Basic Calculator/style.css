@@ -1,0 +1,28 @@
+.calculator{
+    margin-top: 50px;
+    width: 500px;
+    height: 600px;
+    border: 5px solid rgb(0, 0, 0);
+    background-color: rgb(152, 4, 182);
+}
+.first-row,.second-row{
+    display: flex;
+}
+.result-input{
+    width: 80%;
+    margin-right: 20px;
+}
+.second-row input{
+    margin: 30px;
+}
+.third-row input{
+    margin: 30px;
+}
+.forth-row input{
+    margin: 30px;
+}
+.fifth-row input{
+    margin: 30px;
+}
+
+
