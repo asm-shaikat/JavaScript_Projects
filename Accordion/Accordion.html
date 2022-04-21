@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .main{
+            padding: 10px;
+            background:wheat;
+            text-align: center;
+            border: 2px solid black;
+            margin-bottom: 2px;
+        }
+        .child{
+            height: auto;
+            width: 100%;
+            padding: 10px;
+            display: none;
+        }
+        .main:hover{
+            background: grey;
+            transition-duration: .3s;
+            cursor: pointer;
+        }
+    </style>
+    <title>Accordion</title>
+</head>
+<body>
+    <div class="work">
+        <div class="main">Work-1</div>
+        <div class="child">Lorem ipsum dolor sit amet consectetur adipisicing elit. At itaque enim error laboriosam libero culpa blanditiis tempore nostrum, accusantium necessitatibus aperiam quis, recusandae saepe illo beatae nihil in, sunt qui. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit labore vel, aperiam porro in sit harum. Impedit laboriosam placeat, est laudantium in ex optio modi, accusamus blanditiis amet minus facere! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure similique qui veritatis assumenda ex debitis eos doloribus architecto necessitatibus dolorum.</div>
+        <div class="main">Work-2</div>
+        <div class="child">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et nesciunt ducimus rerum illo nobis vel, suscipit necessitatibus eius aut ex beatae excepturi quisquam incidunt delectus optio pariatur tenetur consequuntur cupiditate?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium quibusdam consectetur, impedit, optio facilis dolorem libero excepturi esse beatae, saepe eveniet!</div>
+    </div>
+    <script>
+        var main=document.getElementsByClassName("main");
+        for (let i = 0; i< main.length; i++) {
+          main[i].addEventListener('click',function(){
+              this.classList.toggle("active");
+              var btn=this.nextElementSlibling;
+              if(btn.style.display="block"){
+                  btn.style.display=="none";
+              }
+              else{
+                  btn.style.display="block";
+              }
+          });
+           
+        }
+    </script>    
+</body>
+</html>
