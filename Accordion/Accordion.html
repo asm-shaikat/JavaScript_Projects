@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        .work{
+            width: 500px;
+        }
         .main{
             padding: 10px;
             background:wheat;
@@ -38,12 +41,12 @@
         for (let i = 0; i< main.length; i++) {
           main[i].addEventListener('click',function(){
               this.classList.toggle("active");
-              var btn=this.nextElementSlibling;
-              if(btn.style.display="block"){
-                  btn.style.display=="none";
+              var btn=this.nextElementSibling;
+              if(btn.style.display=='none'){
+                  btn.style.display='block';
               }
               else{
-                  btn.style.display="block";
+                  btn.style.display='none';
               }
           });
            
