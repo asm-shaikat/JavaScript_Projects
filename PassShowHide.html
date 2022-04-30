@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pass Show Hide</title>
+</head>
+<body>
+    <div style="margin: 200px;">
+    <div>
+        <input type="password" name="" id="pass" placeholder="Password">
+    </div>
+    <input type="checkbox" name="" id="" onclick="show()"><span>Show password</span>
+    </div>
+
+<script>
+    var pass = document.getElementById("pass");
+    function show(){
+        if(pass.type=="password"){
+            pass.type="text";
+        }
+        else{
+            pass.type="password";
+        }
+    }
+    
+</script>
+</body>
+</html>
