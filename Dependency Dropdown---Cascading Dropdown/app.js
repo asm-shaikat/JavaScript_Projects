@@ -1,40 +1,71 @@
 var subjectObject = {
-    "Front-end": {
-      "HTML": ["Links", "Images", "Tables", "Lists"],
-      "CSS": ["Borders", "Margins", "Backgrounds", "Float"],
-      "JavaScript": ["Variables", "Operators", "Functions", "Conditions"]    
+    "Level-1 Term-1": {
+      "Theory": ["CSE 1101", "CSE 1201", "CSE 1203", "MATH 1141", "PHY 1103","EEE 1163","ME 1181"],
+      "Sessional": ["CSE 1100", "CSE 1102", "PHY 1104","EEE 1164"],
     },
-    "Back-end": {
-      "PHP": ["Variables", "Strings", "Arrays"],
-      "SQL": ["SELECT", "UPDATE", "DELETE"]
+    "Level-1 Term-1":{
+      "Theory": ["CSE 1201", "CSE 1203", "HUM 1201", "MATH 1203", "EEE 1269"],
+      "Sessional": ["CSE 1204", "HUM 1202", "EEE 1270", "ME 1250"]
     },
-    "Nothing":{}
+    "Level-2 Term-1": {
+      "Theory": ["CSE 2101", "CSE 2103", "CSE 2105", "CHEM 2101", "MATH 2103"],
+      "Sessional": ["2102", "CSE 2104", "CSE 2106", "CSE 2108"]
+    },
+    "Level-2 Term-2":{
+      "Theory": ["CSE 2201", "CSE 2203", "CSE 2205", "MATH 2203","EEE 2269"],
+      "Sessional": ["CSE 2200", "CSE 2202", "CSE 2206","EEE 2270"],
+    },
+    "Level-3 Term-1":{
+      "Theory": ["CSE 3101", "CSE 3103", "CSE 3105", "CSE 3107","CSE 3109"],
+      "Sessional": ["CSE 3100","CSE 3102", "CSE 3104", "CSE 3110","CSE 3112"],      
+    },
+    "Level-3 Term-2":{
+      "Theory": ["CSE 3201", "CSE 3203", "CSE 3205", "CSE 3207","CSE 3209"],
+      "Sessional": ["CSE 3200","CSE 3202","CSE 3204", "CSE 3206", "CSE 3210"],
+    },
+    "Level-4 Term-1":{
+      "Theory":  ["CSE 4101", "CSE 4103", "CSE 4105","CSE 4107","CSE 4109"],
+      "Sessional": ["CSE 4000","CSE 4102","CSE 4104","CSE 3208"],
+    },
+    "Level-4 Term-2":{
+      "Theory":  ["CSE 42011", "CSE 4213", "CSE 4215"],
+      "Sessional": ["CSE 4000","CSE 4212","CSE 4216"],
+    }
   }
   window.onload = function() {
-    var subjectSel = document.getElementById("subject");
-    var topicSel = document.getElementById("topic");
-    var chapterSel = document.getElementById("chapter");
+    var levelTermSel = document.getElementById("levelTerm");
+    var courseTypeSel = document.getElementById("courseType");
+    var courseSel = document.getElementById("course");
+    var courseSel1 = document.getElementById("course1");
+    var courseSel2 = document.getElementById("course2");
+    var courseSel3 = document.getElementById("course3");
+    var courseSel4 = document.getElementById("course4");
 
     // For showing subject value
     for (var x in subjectObject) {
-      subjectSel.options[subjectSel.options.length] = new Option(x);
+      levelTermSel.options[levelTermSel.options.length] = new Option(x);
     }
 
     // For showing topic value
-    subjectSel.onchange = function() {
-        chapterSel.length = 1;
-        topicSel.length = 1;
+    levelTermSel.onchange = function() {
+        courseSel.length = 1;
+        courseTypeSel.length = 1;
 
         for (var y in subjectObject[this.value]) {
-        topicSel.options[topicSel.options.length] = new Option(y);
+        courseTypeSel.options[courseTypeSel.options.length] = new Option(y);
       }
     }
     // For showing chapter value
-    topicSel.onchange = function() {
-        chapterSel.length = 1;
-      var z = subjectObject[subjectSel.value][this.value];
+    courseTypeSel.onchange = function() {
+        courseSel.length = 1;
+      var z = subjectObject[levelTermSel.value][this.value];
       for (var i = 0; i < z.length; i++) {
-        chapterSel.options[i] = new Option(z[i], z[i]);
+        courseSel.options[i] = new Option(z[i], z[i]);
+        courseSel1.options[i] = new Option(z[i], z[i]);
+        courseSel2.options[i] = new Option(z[i], z[i]);
+        courseSel3.options[i] = new Option(z[i], z[i]);
+        courseSel4.options[i] = new Option(z[i], z[i]);
+
       }
     }
   }
